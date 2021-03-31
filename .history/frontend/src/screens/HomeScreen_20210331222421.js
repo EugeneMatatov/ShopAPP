@@ -9,7 +9,7 @@ import Paginate from "../components/Paginate";
 import ProductCarousel from "../components/ProductCarousel";
 import Meta from "../components/Meta";
 import { listProducts } from "../actions/productActions";
-
+import "../dictionary/eng.js";
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword;
 
@@ -34,7 +34,7 @@ const HomeScreen = ({ match }) => {
           Go Back
         </Link>
       )}
-      <h1>Latest Products</h1>
+      <h1>{prod.label}Latest Products</h1>
       {loading ? (
         <Loader />
       ) : error ? (
