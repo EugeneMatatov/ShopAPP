@@ -1,11 +1,11 @@
 {
-  "name": "shopme",
+  "name": "proshop",
   "version": "1.0.0",
   "lockfileVersion": 2,
   "requires": true,
   "packages": {
     "": {
-      "name": "shopme",
+      "name": "proshop",
       "version": "1.0.0",
       "license": "MIT",
       "dependencies": {
