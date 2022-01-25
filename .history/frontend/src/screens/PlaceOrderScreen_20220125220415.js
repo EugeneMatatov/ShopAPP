@@ -105,8 +105,7 @@ const PlaceOrderScreen = ({ history }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x NIS {item.price} = NIS{" "}
-                          {item.qty * item.price}
+                          {item.qty} x ${item.price} = {item.qty * item.price}
                         </Col>
                       </Row>
                     </ListGroup.Item>
