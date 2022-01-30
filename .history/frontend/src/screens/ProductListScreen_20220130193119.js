@@ -95,6 +95,7 @@ const ProductListScreen = ({ history, match }) => {
           <Table striped bordered hover responsive className="table-sm">
             <thead>
               <tr>
+                <th>ID</th>
                 <th>NAME</th>
                 <th>PRICE</th>
                 <th>CATEGORY</th>
@@ -105,6 +106,7 @@ const ProductListScreen = ({ history, match }) => {
             <tbody>
               {products.map((product) => (
                 <tr key={product._id}>
+                 
                   <td>{product.name}</td>
                   <td>NIS {product.price}</td>
                   <td>{product.category}</td>
