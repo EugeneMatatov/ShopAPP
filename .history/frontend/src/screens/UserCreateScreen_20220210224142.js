@@ -25,10 +25,9 @@ const UserCreateScreen = ({ location, history }) => {
     if (!userInfo || !userInfo.isAdmin) {
       history.push("/"); //redirect to login screen if not admin
     }
-    if (loading) {
+    if (successCreate) {
        
       history.push("/admin/userlist");
-      
     }
   }, [history, userInfo, successCreate]);
 

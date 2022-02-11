@@ -21,14 +21,12 @@ const UserCreateScreen = ({ location, history }) => {
   const { loading, error, successCreate } = userCreate;
 
   useEffect(() => {
-      
+      dis
     if (!userInfo || !userInfo.isAdmin) {
       history.push("/"); //redirect to login screen if not admin
     }
-    if (loading) {
-       
+    if (successCreate && !loading) {
       history.push("/admin/userlist");
-      
     }
   }, [history, userInfo, successCreate]);
 

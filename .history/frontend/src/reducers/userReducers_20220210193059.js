@@ -138,9 +138,9 @@ export const userUpdateReducer = (state = { user: {} }, action) => {
 export const userCreateReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_CREATE_REQUEST:
-      return { loading: true, successCreate: false };
+      return { loading: true };
     case USER_CREATE_SUCCESS:
-      return { loading: false, successCreate: true };
+      return { loading: false ,};
     case USER_CREATE_FAIL:
       return { loading: false };
 

@@ -307,7 +307,8 @@ export const updateUser = (user) => async (dispatch, getState) => {
   }
 };
 
-export const createUser =(name, email, password) => async (dispatch, getState) => {
+export const createUser =
+  (name, email, password) => async (dispatch, getState) => {
     try {
       dispatch({
         type: USER_CREATE_REQUEST,

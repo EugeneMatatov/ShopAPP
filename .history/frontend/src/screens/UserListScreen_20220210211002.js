@@ -18,6 +18,8 @@ const UserListScreen = ({ history }) => {
   const userDelete = useSelector((state) => state.userDelete);
   const { success: successDelete } = userDelete;
 
+  
+ 
   useEffect(() => {
     if (userInfo && userInfo.isAdmin) {
       dispatch(listUsers());
@@ -32,8 +34,9 @@ const UserListScreen = ({ history }) => {
     }
   };
   const createUserHandler = () => {
-    history.push("/userlist/create");
+    history.push("/userlist/create"); 
     // dispatch(createUser());
+    
   };
 
   return (
@@ -42,7 +45,7 @@ const UserListScreen = ({ history }) => {
         <Col>
           <h1>Users</h1>
         </Col>
-
+        
         <Col className="text-right">
           <Button className="my-3" onClick={createUserHandler}>
             <i className="fas fa-plus"></i> Create User

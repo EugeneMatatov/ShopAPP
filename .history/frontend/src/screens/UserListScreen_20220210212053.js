@@ -32,6 +32,7 @@ const UserListScreen = ({ history }) => {
     }
   };
   const createUserHandler = () => {
+    
     history.push("/userlist/create");
     // dispatch(createUser());
   };

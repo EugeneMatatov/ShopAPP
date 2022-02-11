@@ -18,13 +18,16 @@ const UserListScreen = ({ history }) => {
   const userDelete = useSelector((state) => state.userDelete);
   const { success: successDelete } = userDelete;
 
+  const userCreate = useSelector((state) => state.userCreate);
+  const { successCreate } = userCreate;
+
   useEffect(() => {
     if (userInfo && userInfo.isAdmin) {
       dispatch(listUsers());
     } else {
       history.push("/login");
     }
-  }, [dispatch, history, successDelete, userInfo]);
+  }, [dispatch, history, successDelete, userInfo, successCreate]);
 
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure")) {

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
-import { createUser } from "../actions/userActions";
+import { register, createUser } from "../actions/userActions";
 
 const UserCreateScreen = ({ location, history }) => {
   const [name, setName] = useState("");
@@ -15,22 +15,18 @@ const UserCreateScreen = ({ location, history }) => {
   const [message, setMessage] = useState(null);
 
   const dispatch = useDispatch();
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
   const userCreate = useSelector((state) => state.userCreate);
-  const { loading, error, successCreate } = userCreate;
+  const { loading, error, userInfo, successCreate } = userCreate;
+
+  const redirect = location.search
+    ? location.search.split("=")[1]
+    : "/admin/userlist";
 
   useEffect(() => {
-      
-    if (!userInfo || !userInfo.isAdmin) {
-      history.push("/"); //redirect to login screen if not admin
+    if (successCreate) {
+      history.push(redirect);
     }
-    if (loading) {
-       
-      history.push("/admin/userlist");
-      
-    }
-  }, [history, userInfo, successCreate]);
+  }, [history, userInfo, redirect, successCreate]);
 
   const submitHandler = (e) => {
     e.preventDefault();

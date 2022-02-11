@@ -15,20 +15,16 @@ const UserCreateScreen = ({ location, history }) => {
   const [message, setMessage] = useState(null);
 
   const dispatch = useDispatch();
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
+  
   const userCreate = useSelector((state) => state.userCreate);
-  const { loading, error, successCreate } = userCreate;
+  const { loading, error, userInfo, successCreate } = userCreate;
 
   useEffect(() => {
-      
     if (!userInfo || !userInfo.isAdmin) {
       history.push("/"); //redirect to login screen if not admin
     }
-    if (loading) {
-       
+    if (successCreate) {
       history.push("/admin/userlist");
-      
     }
   }, [history, userInfo, successCreate]);
 
