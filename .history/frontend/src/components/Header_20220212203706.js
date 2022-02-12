@@ -26,7 +26,20 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Route render={({ history }) => <SearchBox history={history} />} />
+           
             <Nav className="ml-auto">
+             {userInfo?():null}
+               <LinkContainer to="/contacts">
+              <Nav.Link >
+               <i className="fa-solid fa-message-middle">Contacts</i>
+              
+              
+              </Nav.Link>
+            </LinkContainer>)
+            
+           
+           
+           
               <LinkContainer to="/cart">
                 <Nav.Link>
                   <i className="fas fa-shopping-cart"></i> Cart
@@ -49,7 +62,7 @@ const Header = () => {
                 </LinkContainer>
               )}
               {userInfo && userInfo.isAdmin && (
-                <NavDropdown title="Admin" id="adminmenu">
+                <NavDropdown title="MENU" id="adminmenu">
                   <LinkContainer to="/admin/userlist">
                     <NavDropdown.Item>Users</NavDropdown.Item>
                   </LinkContainer>
