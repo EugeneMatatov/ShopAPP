@@ -167,7 +167,7 @@ const updateUser = asyncHandler(async (req, res) => {
 });
 
 // @desc    Create new user
-// @route   POST /api/users/create
+// @route   PUT /api/users/create
 // @access  Private/Admin
 const createUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
