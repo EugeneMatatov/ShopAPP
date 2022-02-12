@@ -38,7 +38,7 @@ const LoginScreen = ({ location, history }) => {
         <Form.Group controlId="email">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
-          
+          re
             type="email"
             placeholder="Enter email"
             value={email}

@@ -67,7 +67,7 @@ const ContactScreen = ({ history }) => {
         <Form.Group controlId="message">
           <Form.Label>Message</Form.Label>
           <Form.Control
-          required
+          requ
             as="textarea"
             row="4"
             placeholder="Enter text"

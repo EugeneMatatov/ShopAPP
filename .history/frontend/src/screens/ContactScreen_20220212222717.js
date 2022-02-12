@@ -45,7 +45,6 @@ const ContactScreen = ({ history }) => {
         <FormGroup controlId="user_name">
           <Form.Label>Name</Form.Label>
           <Form.Control
-          required
             type="text"
             placeholder="Enter name"
             name="user_name"
@@ -56,7 +55,6 @@ const ContactScreen = ({ history }) => {
         <Form.Group controlId="user_email">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
-          required
             type="email"
             placeholder="Enter email"
             name="user_email"
@@ -67,7 +65,6 @@ const ContactScreen = ({ history }) => {
         <Form.Group controlId="message">
           <Form.Label>Message</Form.Label>
           <Form.Control
-          required
             as="textarea"
             row="4"
             placeholder="Enter text"
@@ -79,7 +76,7 @@ const ContactScreen = ({ history }) => {
         <Button
           type="submit"
           variant="primary"
-         
+          className="btn text-center btn-blue"
         >
           SEND
         </Button>
