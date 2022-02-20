@@ -84,8 +84,15 @@ const createProduct = asyncHandler(async (req, res) => {
 // @route   PUT /api/products/:id
 // @access  Private/Admin
 const updateProduct = asyncHandler(async (req, res) => {
-  const { name, price, description, image, brand, category, countInStock } =
-    req.body;
+  const {
+    name,
+    price,
+    description,
+    image,
+    brand,
+    category,
+    countInStock,
+  } = req.body;
 
   const product = await Product.findById(req.params.id);
 
@@ -94,8 +101,8 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.price = price;
     product.description = description;
     product.image = image;
-    //console.log(image);
-    //console.log(image.split(""));
+    console.log(image);
+    console.log(image.split(""));
     product.img.data = fs.readFileSync("." + image);
     product.img.contentType = "image/jpg";
     product.brand = brand;

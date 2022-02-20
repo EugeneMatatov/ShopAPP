@@ -94,8 +94,8 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.price = price;
     product.description = description;
     product.image = image;
-    //console.log(image);
-    //console.log(image.split(""));
+    console.log(image);
+    console.log(image.split(""));
     product.img.data = fs.readFileSync("." + image);
     product.img.contentType = "image/jpg";
     product.brand = brand;
