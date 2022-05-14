@@ -8,6 +8,7 @@ import Loader from "../components/Loader";
 import Paginate from "../components/Paginate";
 import ProductCarousel from "../components/ProductCarousel";
 import Meta from "../components/Meta";
+import ContactScreen from "./"
 import { listProducts } from "../actions/productActions";
 
 const HomeScreen = ({ match }) => {
@@ -25,7 +26,7 @@ const HomeScreen = ({ match }) => {
   }, [dispatch, keyword, pageNumber]);
 
   return (
-    <>
+    <><ContactScreen></ContactScreen>
       <Meta />
       {!keyword ? (
         <ProductCarousel />
