@@ -18,16 +18,17 @@ import UserEditScreen from "./screens/UserEditScreen";
 import ProductListScreen from "./screens/ProductListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
 import OrderListScreen from "./screens/OrderListScreen";
-import UserCreateScreen from "./screens/UserCreateScreen"
+import UserCreateScreen from "./screens/UserCreateScreen";
+import ContactScreen from "./screens/ContactScreen";
 const App = () => {
   return (
     <Router>
       <Header />
       <main className="py-3">
         <Container>
-          <Route path="/order/:id" component={OrderScreen} />
+          <Route ="/order/:id" component={OrderScreen} />
           <Route path="/shipping" component={ShippingScreen} />
-          <Route path="/payment" component={PaymentScreen} />
+          <Route pah="/payment" component={PaymentScreen} />
           <Route path="/placeorder" component={PlaceOrderScreen} />
           <Route path="/login" component={LoginScreen} />
           <Route path="/register" component={RegisterScreen} />
@@ -35,8 +36,9 @@ const App = () => {
           <Route path="/product/:id" component={ProductScreen} />
           <Route path="/cart/:id?" component={CartScreen} />
           <Route path="/admin/userlist" component={UserListScreen} />
-          <Route path="/admin/userlist/create" component={UserCreateScreen} />
+          <Route path="/userlist/create" component={UserCreateScreen} />
           <Route path="/admin/user/:id/edit" component={UserEditScreen} />
+          <Route path="/contacts" component={ContactScreen} />
           <Route
             path="/admin/productlist"
             component={ProductListScreen}
