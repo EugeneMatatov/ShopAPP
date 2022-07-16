@@ -42,7 +42,8 @@ const Header = () => {
                   <i className="fas fa-shopping-cart">
                     {cartItems.reduce((acc, item) => acc + item.qty, 0)}
                   </i>{" "}
-                                  </Nav.Link>
+                  Cart
+                </Nav.Link>
               </LinkContainer>
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id="username">

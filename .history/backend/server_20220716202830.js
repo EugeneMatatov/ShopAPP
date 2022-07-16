@@ -4,7 +4,6 @@ import dotenv from "dotenv"; //loads environment variables from a .env file into
 import morgan from "morgan"; //logger for dev
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import connectDB from "./config/db.js";
-import colors from "colors";
 import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
@@ -27,10 +26,6 @@ app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/upload", uploadRoutes);
-
-app.get("/api/config/paypal", (req, res) =>
-  res.send(process.env.PAYPAL_CLIENT_ID)
-);
 
 const __dirname = path.resolve(); // current absolute working directory
 app.use("/uploads", express.static(path.join(__dirname, "/uploads"))); //express.static-This is a built-in middleware function in Express. It serves static files

@@ -18,16 +18,13 @@ const UserListScreen = ({ history }) => {
   const userDelete = useSelector((state) => state.userDelete);
   const { success: successDelete } = userDelete;
 
-  const userCreate = useSelector((state) => state.userCreate);
-  const { successCreate } = userCreate;
   useEffect(() => {
     if (userInfo && userInfo.isAdmin) {
       dispatch(listUsers());
     } else {
       history.push("/login");
     }
-    console.log(users);
-  }, [dispatch, history, successDelete, successCreate, userInfo]);
+  }, [dispatch, history, successDelete, userInfo]);
 
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure")) {
@@ -36,6 +33,7 @@ const UserListScreen = ({ history }) => {
   };
   const createUserHandler = () => {
     history.push("/userlist/create");
+    // dispatch(createUser());
   };
 
   return (
@@ -59,6 +57,7 @@ const UserListScreen = ({ history }) => {
         <Table striped bordered hover responsive className="table-sm">
           <thead>
             <tr>
+              <th>ID</th>
               <th>NAME</th>
               <th>EMAIL</th>
               <th>ADMIN</th>
@@ -68,6 +67,7 @@ const UserListScreen = ({ history }) => {
           <tbody>
             {users.map((user) => (
               <tr key={user._id}>
+                
                 <td>{user.name}</td>
                 <td>
                   <a href={`mailto:${user.email}`}>{user.email}</a>
